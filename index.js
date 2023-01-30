@@ -25,7 +25,7 @@ if(license==='Mozilla_Public'){
 }
 }
 
-// rrenders the licenseBadge
+// renders the licenseBadge
 function renderLicenseBadge(license) {
   
     if (license!=="NONE") {
@@ -42,3 +42,23 @@ function renderLicenseBadge(license) {
   
   // creates the license section
   function renderLicenseSection(license) {
+
+    if(license!=='NONE'){return `##License\n
+  This product is licensed under- <a href="${link}">${license}</a>`}
+  return '';
+}
+
+//  cretes the markdown for the readme
+function generateMarkdown(data) {
+  createLicenseLinkUrl(data.license);
+
+  return `# ${data.title}
+  ${renderLicenseBadge(data.license)}
+  ## Description 
+  ${data.description}
+  ## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributions](#contributions)
+- [Tests](#tests)
+- ${renderLicenseLink(data.license)}

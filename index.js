@@ -24,3 +24,21 @@ if(license==='Mozilla_Public'){
   link='https://www.mozilla.org/en-US/MPL/2.0/';
 }
 }
+
+// rrenders the licenseBadge
+function renderLicenseBadge(license) {
+  
+    if (license!=="NONE") {
+      return `[![GitHub license](https://img.shields.io/badge/License-${license}-blue.svg)](${link})`;
+    }
+    return '';
+  }
+  
+  //  Creates link for TOC
+  function renderLicenseLink(license) {
+    if(license!=='NONE'){return `[License](#license)`}
+    return '';
+  }
+  
+  // creates the license section
+  function renderLicenseSection(license) {

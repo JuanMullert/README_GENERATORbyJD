@@ -24,26 +24,25 @@ if(license==='Mozilla_Public'){
   link='https://www.mozilla.org/en-US/MPL/2.0/';
 }
 }
-
-// renders the licenseBadge
+// rrenders the licenseBadge
 function renderLicenseBadge(license) {
   
-    if (license!=="NONE") {
-      return `[![GitHub license](https://img.shields.io/badge/License-${license}-blue.svg)](${link})`;
-    }
-    return '';
+  if (license!=="NONE") {
+    return `[![GitHub license](https://img.shields.io/badge/License-${license}-blue.svg)](${link})`;
   }
-  
-  //  Creates link for TOC
-  function renderLicenseLink(license) {
-    if(license!=='NONE'){return `[License](#license)`}
-    return '';
-  }
-  
-  // creates the license section
-  function renderLicenseSection(license) {
+  return '';
+}
 
-    if(license!=='NONE'){return `##License\n
+//  Creates link for TOC
+function renderLicenseLink(license) {
+  if(license!=='NONE'){return `[License](#license)`}
+  return '';
+}
+
+// creates the license section
+function renderLicenseSection(license) {
+  
+  if(license!=='NONE'){return `##License\n
   This product is licensed under- <a href="${link}">${license}</a>`}
   return '';
 }
@@ -62,7 +61,6 @@ function generateMarkdown(data) {
 - [Contributions](#contributions)
 - [Tests](#tests)
 - ${renderLicenseLink(data.license)}
-
 ## Installation
 ${data.install}
 ## Usage 

@@ -112,3 +112,21 @@ const questions = [
     },
 
 ];
+
+
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, generateMarkdown(data), (err) =>
+        err ? console.error(err) : console.log('Created README.md!')
+    )
+}
+
+function init() {
+    inquirer.prompt(questions).then((response) => {
+        writeToFile("README.md", response);
+    })
+}
+
+
+
+// Function call to initialize app
+init();
